@@ -1,13 +1,31 @@
 import React from 'react';
-import Header from './components/Header';
+import Header from './components/menubar';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import 'semantic-ui-css/semantic.min.css'
+import { Container } from 'semantic-ui-react';
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import Custom from './pages/Custom'
+import Products from './pages/Products'
+import Footer from './components/footer'
 import './default.scss';
 
 function App() {
   return (
-    <div className="App">
-      <Header>
-      </Header>
-    </div>
+  <Router>
+    <Container>
+      <main>
+      <Header/>
+      <Route exact path='/' component={Home}/>
+      <Route exact path='/login' component={Login}/>
+      <Route exact path='/register' component={Register}/>
+      <Route exact path='/products' component={Products} title="mathew"/>
+      <Route exact path='/custom' component={Custom}/>
+      </main>
+    </Container>
+    <Footer/>
+  </Router>
   );
 } 
 
