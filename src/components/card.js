@@ -7,7 +7,7 @@ const CardProduct = (props) => {
     <Card.Content>
       <Card.Header>{props.title}</Card.Header>
       <Card.Meta>
-        <span className='date'>Joined in 2021 April (´∀｀)♡</span>
+        <span className='date'>{props.love} <span className='block-price'></span><span className='block-price'>S$8</span></span>
       </Card.Meta>
       <Card.Description>
         {props.description}

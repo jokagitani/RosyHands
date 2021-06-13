@@ -102,3 +102,9 @@ h1.extra-large{
 p.small{
     font-size: small;
 }
+.ui.card > .content > .header, .ui.cards > .card > .content > .header{
+    font-family: 'Viaoda Libre', cursive !important;
+}
+.block-price{
+    display:block;
+}
