@@ -11,7 +11,7 @@ const Footer = props => {
             <p>Return</p>
             </Grid.Column>
             <Grid.Column width={10} className="central">
-            <p>Always stay updated on our Instagram for our latest drops! <Image src={instagram} className='inline'/> </p>
+            <p>Always stay updated on our Instagram for our latest drops! <a href="https://www.instagram.com/rosy.hands/"> <Image src={instagram} className='inline'/></a> </p>
             <p className="small">Copyright © 2021 RosyHands </p>
             </Grid.Column>
             <Grid.Column width={3} className="central">

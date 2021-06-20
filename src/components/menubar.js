@@ -10,7 +10,7 @@ const Menubar = props => {
     const handleItemClick = (e, { name }) => setActiveItem(name);
     const [activeItem, setActiveItem] = useState(path);
     return (
-        <Menu pointing secondary size="massive" color="light">
+        <Menu pointing secondary color="light">
         <Menu.Item>
           <img src={Logo} />
         </Menu.Item>
@@ -53,11 +53,11 @@ const Menubar = props => {
             Register
         </Menu.Item>
         <Menu.Item
-          name='sign-in'
-          active={activeItem === 'sign-in'}
+          name='signin'
+          active={activeItem === 'signin'}
           onClick={handleItemClick}
           as={Link}
-          to="/sign-in"
+          to="/signin"
         >
           Sign-in
         </Menu.Item>

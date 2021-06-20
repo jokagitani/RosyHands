@@ -8,6 +8,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Custom from './pages/Custom'
 import Products from './pages/Products'
+import Signin from './pages/Signin'
 import Footer from './components/footer'
 import './default.scss';
 
@@ -22,6 +23,7 @@ function App() {
       <Route exact path='/register' component={Register}/>
       <Route exact path='/products' component={Products} title="mathew"/>
       <Route exact path='/custom' component={Custom}/>
+      <Route exact path='/signin' component={Signin}/>
       </main>
     </Container>
     <Footer/>
