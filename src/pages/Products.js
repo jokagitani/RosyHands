@@ -8,10 +8,10 @@ import kobo from './../images/kobo.jpeg';
 import merosy from './../images/merosy.jpeg';
 import scarlet from './../images/scarlet.jpeg';
 import lovacina from './../images/lovacina.jpeg';
-import adonis from './../images/adonis.jpeg'
-
-
-const Homepage = props => {
+import adonis from './../images/adonis.jpeg';
+import PopupModal from './../components/modal';
+const Products = props => {
+    const description = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
     return(
     <Grid columns={3} >
         <Grid.Row className="page-title">
@@ -19,7 +19,7 @@ const Homepage = props => {
         </Grid.Row>
         <Grid.Row>
             <Grid.Column width={4}>
-                <CardProduct title='AUROUS' url={aurous} love='(‘∀’●)♡'/>
+                <CardProduct title='AUROUS' url={aurous} love='(‘∀’●)♡' modal={<PopupModal title='AUROUS' url={aurous} description={description} />}/>
             </Grid.Column>
             <Grid.Column width={4}>
                 <CardProduct title='IRIDESCENT' url={iridescent} love='(´∀｀)♡'/>
@@ -49,4 +49,4 @@ const Homepage = props => {
     )
 };
 
-export default Homepage
+export default Products;

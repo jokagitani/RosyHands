@@ -1,69 +1,87 @@
-import React, {useState} from 'react';
-import { Menu } from "semantic-ui-react";
-import Logo from './../images/rosyhand-logo.png';
+import React, { useState } from "react";
+import { Menu, Sticky } from "semantic-ui-react";
+import Logo from "./../images/rosyhand-logo.png";
 import { Link } from "react-router-dom";
 
+const Menubar = (props) => {
+  const pathname = window.location.pathname;
+  const path = pathname === "/" ? "home" : pathname.substr(1);
+  const handleItemClick = (e, { name }) => setActiveItem(name);
+  const [activeItem, setActiveItem] = useState(path);
+  return (
+    <Menu
+      style={{
+        position: "sticky",
+        top: 0,
+        zIndex: 100,
+        backgroundColor: "rgba(100, 0, 0, 0.01)",
+      }}
+      pointing
+      secondary
+      color="light"
+    >
+      <Menu.Item>
+        <img src={Logo} />
+      </Menu.Item>
 
-const Menubar = props => {
-    const pathname = window.location.pathname;
-    const path = pathname === '/' ? 'home' : pathname.substr(1);
-    const handleItemClick = (e, { name }) => setActiveItem(name);
-    const [activeItem, setActiveItem] = useState(path);
-    return (
-        <Menu pointing secondary color="light">
-        <Menu.Item>
-          <img src={Logo} />
-        </Menu.Item>
-
+      <Menu.Item
+        name="home"
+        active={activeItem === "home"}
+        onClick={handleItemClick}
+        as={Link}
+        to="/"
+      >
+        About Us
+      </Menu.Item>
+      <Menu.Item
+        name="products"
+        active={activeItem === "products"}
+        onClick={handleItemClick}
+        as={Link}
+        to="/products"
+      >
+        Products
+      </Menu.Item>
+      <Menu.Item
+        name="custom"
+        active={activeItem === "custom"}
+        onClick={handleItemClick}
+        as={Link}
+        to="/custom"
+      >
+        Custom
+      </Menu.Item>
+      <Menu.Menu position="right">
         <Menu.Item
-          name='home'
-          active={activeItem === 'home'}
-          onClick={handleItemClick}
-          as={Link}
-          to="/"
-        >
-          About Us
-        </Menu.Item>
-        <Menu.Item
-          name='products'
-          active={activeItem === 'products'}
-          onClick={handleItemClick}
-          as={Link}
-          to="/products"
-        >
-          Products
-        </Menu.Item>
-        <Menu.Item
-          name='custom'
-          active={activeItem === 'custom'}
-          onClick={handleItemClick}
-          as={Link}
-          to="/custom"
-        >
-          Custom
-        </Menu.Item>
-        <Menu.Menu position="right">
-        <Menu.Item
-          name='register'
-          active={activeItem === 'register'}
+          name="register"
+          active={activeItem === "register"}
           onClick={handleItemClick}
           as={Link}
           to="/register"
         >
-            Register
+          Cart
         </Menu.Item>
         <Menu.Item
-          name='signin'
-          active={activeItem === 'signin'}
+          name="register"
+          active={activeItem === "register"}
+          onClick={handleItemClick}
+          as={Link}
+          to="/register"
+        >
+          Register
+        </Menu.Item>
+        <Menu.Item
+          name="signin"
+          active={activeItem === "signin"}
           onClick={handleItemClick}
           as={Link}
           to="/signin"
         >
           Sign-in
         </Menu.Item>
-        </Menu.Menu>
-      </Menu>
-    );
+      </Menu.Menu>
+    </Menu>
+  );
 };
 
 export default Menubar;
